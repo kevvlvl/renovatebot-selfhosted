@@ -12,3 +12,15 @@ In this repo, I'm using RenovateBot to perform dependency analysis on specific r
 2. I then drafted a configuration file 'config.js' based on RenovateBot's configurations documented on https://docs.renovatebot.com/self-hosted-configuration/
 3. The following article was helpful in getting a head start with the config file: https://jerrynsh.com/12-tips-to-self-host-renovate-bot/
 4. When ready, we run renovatebot using the 'renovate' CLI command
+
+to start in dry-run:
+
+```
+renovate --log-file-level=debug --dry-run=full
+```
+
+to do a real run
+
+```
+renovate
+```
