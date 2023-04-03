@@ -1,11 +1,10 @@
 module.exports = {
     gitAuthor: 'Renovator <noreply@kevvlvl.renovatebot.org>',
-    token: '',
+    token: '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',
     platform: 'github',
     // executionTimeout: 60, // set max timeout of 60 minutes.
-    // cacheDir: '',         // change where renovate's cache is stored.
     persistRepoData: true,   // repo data is kept between executions. git fetch will be used instead of git clone.
-    dryRun: 'full',       // when activated, no PR is created. Obtain detailed log of what Renovate will do
+    binarySource: 'gradle-wrapper',
     onboardingConfig: {
         extends: ['config:base'],
     },
@@ -14,42 +13,27 @@ module.exports = {
             repository: 'kevvlvl/quarkus-carservice-api',
             cloneSubmodules: true,
             addLabels: 'Renovated by the Renovator!',
+            additionalReviewers:  ["kevvlvl_analyst"],
             packageRules: [
                 {
-                    description: 'Enable Minor and Patch updates types',
-                    matchUpdateTypes: ['minor', 'patch'],
-                    enabled: true,
-                    labels: 'UPDATE-MINOR-PATCH'
+                    description: 'Match Config files',
+                    matchPaths: ["**/*.properties"],
+                    groupName: 'Config files'
                 },
             ],
         },
         {
-            repository: 'kevvlvl/ApiTestCucumber',
+            repository: 'kevvlvl/quarkus-carservice-api',
             cloneSubmodules: true,
             addLabels: 'Renovated by the Renovator!',
+            additionalReviewers:  ["kevvlvl_teamlead"],
             packageRules: [
                 {
-                    description: 'Enable Minor and Patch updates types',
-                    matchUpdateTypes: ['minor', 'patch'],
-                    enabled: true,
-                    labels: 'UPDATE-MINOR-PATCH',
-                    matchPackagePrefixes: [
-                        "com.fasterxml",
-                        "io.rest-assured",
-                        "org.hamcrest",
-                    ],
-                    excludePackagePrefixes: ["io.cucumber", "org.apache"]
-                },
-                {
-                    matchUpdateTypes: ['minor', 'patch'],
-                    enabled: false,
-                    labels: 'UPDATE-MINOR-PATCH',
-                    matchPackagePrefixes: [
-                        "io.cucumber",
-                        "org.apache"
-                    ],
+                    description: 'Match source code',
+                    matchPaths: ["**/*.java"],
+                    groupName: 'Java Source code'
                 },
             ],
-        },
+        }
     ],
 };
