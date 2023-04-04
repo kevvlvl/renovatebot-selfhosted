@@ -1,6 +1,5 @@
 module.exports = {
     gitAuthor: 'Renovator <noreply@kevvlvl.renovatebot.org>',
-    token: '',
     platform: 'github',
     // executionTimeout: 60, // set max timeout of 60 minutes.
     persistRepoData: true,   // repo data is kept between executions. git fetch will be used instead of git clone.

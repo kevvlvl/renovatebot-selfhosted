@@ -21,6 +21,7 @@ In this repo, I'm using RenovateBot to perform dependency analysis on specific r
 ```
 $ podman run --rm \
 -v "./config.js:/usr/src/app/config.js" \
--e RENOVATE_DRY_RUN=full \
+-e RENOVATE_DRY_RUN="full" \
+-e RENOVATE_TOKEN="token_value"
 renovate/renovate
 ```
