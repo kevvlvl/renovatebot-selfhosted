@@ -10,9 +10,10 @@ module.exports = {
     repositories: [
         {
             repository: 'kevvlvl/quarkus-carservice-api',
-            cloneSubmodules: true,
+            // baseBranches: ["/^feature\\/.*$/"],
             addLabels: 'Renovated by the Renovator!',
             additionalReviewers:  ["kevvlvl_analyst"],
+            prBodyNotes: ["Properties file changed!"],
             packageRules: [
                 {
                     description: 'Match Config files',
@@ -23,9 +24,10 @@ module.exports = {
         },
         {
             repository: 'kevvlvl/quarkus-carservice-api',
-            cloneSubmodules: true,
+            // baseBranches: ["/^feature\\/.*$/"],
             addLabels: 'Renovated by the Renovator!',
             additionalReviewers:  ["kevvlvl_teamlead"],
+            prBodyNotes: ["Source Code changed!"],
             packageRules: [
                 {
                     description: 'Match source code',
